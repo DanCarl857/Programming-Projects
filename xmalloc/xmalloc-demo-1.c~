@@ -12,9 +12,6 @@ int main(){
 	fprintf(stdout, "Freeing memory now...\n");
 	free(x)
 	fprintf(stdout, "Memory successfully freed...\n")
-	
-	fprintf(stdout, "Trying to allocate 0 bytes of memory....\n")
-	double *y = xmalloc(0);
 	return 0;
 }
 		
