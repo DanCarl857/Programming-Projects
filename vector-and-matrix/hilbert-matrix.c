@@ -28,9 +28,7 @@ int main(void){
 			if(j % 10 == 0 && j != 0)
 				printf("\n");
 			else{
-				for(int i = 0; i < n; i++)
-					for(int j = 0; j < n; j++)
-						printf("%d ", H[i][j]);
+				printf("%d ", H[i][j]);
 			}
 		}
 	}
