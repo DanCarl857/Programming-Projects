@@ -8,22 +8,24 @@
 #include "fetch-line.h"
 
 static char *trim_line(char *s){
-	/* move forward one character at a time */
-	while(isspace(*s++));
+	int i;
+	
+	/* move forward one character at a time, skipping over whitespaces */
+	for(i = 0; !isspace(s[i]); i++);
+	s = &s[i];
+	
 	char *t = s;
-	
-	/* set second pointer and move it to end of string */
-	while(*t++ != '\0' || *t++ != '#');
-		
-	/* if comment truncate... */
-	if(*t == '#')
-		*t = '\0';
-	while(t != s || !isspace(*t)){
-		if(isspace(*t)){
-			*t-- = '\0';
+	for(i = 0; t[i] != '\0'; t++)
+		if(t[i] == '#'){
+			t[i] = '\0';
+			break;
 		}
+	while(s != t){
+		if(isspace(*t))
+			*t-- = '\0';
+		else
+			break;
 	}
-	
 	return s;
 }
 
