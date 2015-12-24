@@ -1,5 +1,5 @@
-// by: Daniel Carlson
-// on: Wed 03:20 am
+/* by: Daniel Carlson
+ * on: Wed 03:20 am */
 
 #ifndef H_ARRAY_H
 #define H_ARRAY_H
@@ -39,7 +39,7 @@
 	putchar('\n');											\
 } while(0)
 
-// TODO: to test this particular function :-)
+/* TODO: to test this particular function :-) */
 #define print_matrix(fmt, m, r, c) do {						\
 	size_t row, column;										\
 	for(row = 0; row < r; row++)							\

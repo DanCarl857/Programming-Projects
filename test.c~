@@ -2,6 +2,6 @@
 #include <stdlib.h>
 
 int main(void){
-	const int bufsize = 100;
+	const in bufsize = 100;
 	char buf[bufsize];
 }
