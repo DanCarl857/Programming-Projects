@@ -1,0 +1,5 @@
+hilbert matrix - a square matrix with entries being the unit fractions
+	e.g - 1 	1/2 
+		 1/2 	1/3
+		 
+bitmap image - a rectangular array of black and white dots
