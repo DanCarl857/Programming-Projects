@@ -12,7 +12,7 @@ static char *trim_line(char *s){
 	
 	/* move forward one character at a time, skipping over whitespaces */
 	for(i = 0; !isspace(s[i]); i++);
-	s = &s[i];
+	s = s + i;
 	
 	char *t = s;
 	for(i = 0; t[i] != '\0'; t++)
