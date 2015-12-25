@@ -14,5 +14,3 @@ PBM - portable bitmap
 		  1 0 0 0
 		  1 0 0 0 
 		  1 0 0 0  --> F(7 x 4 image formed from bitmap file)
-		  
-fill ratio - amount of dots filled or colored
