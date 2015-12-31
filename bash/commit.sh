@@ -18,3 +18,9 @@ echo
 echo "Committing changes now..."
 echo $(git commit -m "this is generic")
 echo "Successfully committed changes..."
+echo
+
+echo "Push now to online repo..."
+echo $(git push master origin)
+echo "Successfully pushed changes to online repo..."
+echo
