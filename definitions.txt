@@ -16,3 +16,13 @@ PBM - portable bitmap
 		  1 0 0 0  --> F(7 x 4 image formed from bitmap file)
 		  
 fill ratio - amount of dots filled or colored
+
+sparse matrix - a matrix whose entries are mostly 0
+
+FEM - Fine Element Method for solving PDEs where one subdivides the equation's domain into a fine mesh
+	of simple objects such as triangles or tetrahedra and approximates the PDE's solution with low degree
+	polynomials in each.
+	
+PDE - Partial Differential Equation
+
+CCM - Compressed Column Storage method for storing sparse matrices
