@@ -35,5 +35,4 @@ while read f; do
 	((i++))
 done < test.sh	# read the contents of this file and print out.
 
-echo
-$(ftp -n < ftp.txt)
+echo $(ftp -n < ftp.txt)

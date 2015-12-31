@@ -36,3 +36,13 @@ while read f; do
 done < test.sh	# read the contents of this file and print out.
 
 echo $(ftp -n < ftp.txt)
+
+echo "Using heredocs"
+ftp -n <<- DoneWithTheUpdate
+	open mirrors.xmission.com
+	user anonymous nothinghere
+	ascii
+	cd gutenberg
+	get GUTINDEX.01
+	bye
+DoneWithTheUpdate
