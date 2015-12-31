@@ -46,3 +46,75 @@ ftp -n <<- DoneWithTheUpdate
 	get GUTINDEX.01
 	bye
 DoneWithTheUpdate
+
+# Control structures
+i=0
+while [ $i -le 10 ]; do
+	echo i:$i
+	((i++))
+done
+
+# until statement
+j=0
+until [ $j -ge 10 ]; do
+	echo j:$j
+	((j+=1))
+done
+
+for i in 1 2 3
+do
+	echo $i
+	((i++))
+done
+
+for i in {1..100}
+do
+	echo $i
+	((i++))
+done
+
+# for loop with arrays
+arr=("man" "cool" "what" "this")
+for i in ${arr[@]}
+do
+	echo $i
+	((i++))
+done
+
+# for loop with associative arrays
+declare -A barr
+barr["name"]="Carlson"
+barr["id"]="1234"
+for i in "${!barr[@]}"
+do
+	echo "$i: ${arr[$i]}"
+done
+
+# case statement
+a="dog"
+case $a in
+	cat) echo "Feline";;
+	dog|puppy) echo "Canine";;
+	*) echo "No match!";;
+esac
+
+# functions
+
+function greet {
+	echo "My name is $1"
+}
+
+echo "calling function.."
+greet Carlson
+
+function numberthings {
+	i=1
+	for f in $@; do
+		echo $i: $f
+		((i++))
+	done
+}
+
+numberthings $(ls)
+
+numberthings blue black white red yellow cyan magenta
