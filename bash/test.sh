@@ -19,9 +19,20 @@ b+=("mango")	# adds to the end of the array
 echo ${b[@]}	# prints out the whole array
 echo ${b[@]: -1}	# get the last element
 
+echo
 # Associative arrays
 declare -A myarray
 myarray[color]=blue
 myarray["office building"]="HQ West"
 
 echo ${myarray["office building"]} is ${myarray[color]}
+
+echo
+# file manipulation
+i=1
+while read f; do
+	echo "Line $i: $f"
+	((i++))
+done < test.sh	# read the contents of this file and print out.
+
+echo $(ftp -n < ftp.txt)
