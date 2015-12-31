@@ -85,7 +85,7 @@ done
 declare -A barr
 barr["name"]="Carlson"
 barr["id"]="1234"
-for i in "${!arr[@]}"
+for i in "${!barr[@]}"
 do
 	echo "$i: ${arr[$i]}"
 done
@@ -118,3 +118,31 @@ function numberthings {
 numberthings $(ls)
 
 numberthings blue black white red yellow cyan magenta
+
+
+while getopts :u:p:ab options; do
+	case $options in
+		u) user=$OPTARGS;;
+		p) pass=$OPTARGS;;
+		a) echo "Got the A flag";;
+		b) echo "Got the B flag";;
+		?) echo "Do not recognize the flag: "$OPTARGS
+	esac
+done
+
+echo "User: $user / Pass: $pass"
+
+echo "What is your name?"
+read name
+
+echo "What is your password"
+read -s pass
+
+echo name: $name, pass:$pass
+
+# the select statement
+select animal in "cat" "dog" "quit"; do
+	echo "You selected $animal"
+	break
+done
+
