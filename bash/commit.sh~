@@ -2,6 +2,8 @@
 #by : Daniel Carlson
 # aim: this script commits new changes to my online repo
 
+echo $(chmod +x commit.sh)
+
 echo "Changing to root directory..."
 echo $(cd ..)
 echo "Directory successfully changed..."

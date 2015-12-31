@@ -1,6 +1,7 @@
 #!/bin/bash
 #by : Daniel Carlson
 # aim: this script commits new changes to my online repo
+#		more changes to come.
 
 echo $(chmod +x commit.sh)
 
