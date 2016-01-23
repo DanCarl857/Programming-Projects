@@ -1,31 +1,23 @@
 #!/bin/bash
 
-# script to print currently logged in users information, and current
-date & time.
-clear
-echo "Hello $USER"
-echo -e "Today is \c ";date
-echo -e "Number of user login: \c"; who | wc -l
-echo "Calendar"
-cal
+space=`df -h | awk '{print $5}' | grep % \ grep -v Use | sort -n | tail -1 | cut -d "%" -f1 -`
 
-read -p "Press [Enter] key to continue..." fakeEnterKey
+case $space in
+[1-6]*)
+	Message="All is quiet"
+	;;
+[7-8]*)
+	Message="Start thinking about cleaning out some stuff. There's a partition that is $space % f"
+	;;
+9[1-8])
+	Message="Better hurry with that new disk.... One partition is $space % full"
+	;;
+99)
+	Message="I'm drowning here! There's a partition at $space %!"
+	;;
+*)
+	Message="blaaaaaaaaaaaaaaaah"
+	;;
+esac
 
-echo ${arg:=Foo}
-bank=HSBC
-echo ${bank:=Citi}
-unset bank
-echo ${bank:=Citi}
-
-function die(){
-	local error=${1:-Undefined error}
-	echo "$0: $LINE $error"
-}
-
-# call die() with an argument
-die "File not found"
-
-# call die() without an argument
-die
-
-exit 0
+echo $Message | mail -s "disk report `date`" dinesh
