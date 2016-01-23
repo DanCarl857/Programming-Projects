@@ -11,7 +11,7 @@ while true; do
 	while [ $HOUR -ne "00" ]; do
 		DESTDIR=$WEBDIR/"$DATE"/"$HOUR"
 		$(mkdir "$DESTDIR")
-		$(mv $PICDIR/*.jpg "$DESTDIR"/
+		$(mv $PICDIR/*.jpg "$DESTDIR"/)
 		sleep 3600
 		HOUR=$(date + %H)
 	done

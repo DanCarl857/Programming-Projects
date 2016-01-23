@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# This script opens 4 terminal windows
+LIST="$(ls)"
 
-i= "0"
+for name in "$LIST"; do
+	if [[ "$name" != *[[:upper:]]* ]]; then
+		continue
+	fi
+	
+ORIG="$name"
+NEW=$(echo $name | tr 'A-Z' 'a-z')
 
-while [ $i -lt 4 ] 
-do
-	# this opens up a terminal
-	xterm &
-	i=$[$i+1]
+mv "$ORIG" "$NEW"
+echo "new name for $ORIG is $NEW"
 done
