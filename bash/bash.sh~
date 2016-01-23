@@ -1,17 +1,4 @@
 #!/bin/bash
 
-year=$(date + %Y)
-
-if [ $[$year % 400] -eq "0" ];then
-	echo "leap year"
-elif [ $[$year % 4] -eq 0 ];then
-	if [ $[$year % 100] -ne 0]; then
-		echo "Feb has 29 days"
-	else
-		echo "Not a leap year"
-	fi
-else
-	echo "Not a leap year"
-fi
-
+echo ${0#*/}
 

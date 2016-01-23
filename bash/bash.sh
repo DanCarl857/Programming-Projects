@@ -1,23 +1,18 @@
 #!/bin/bash
 
-space=`df -h | awk '{print $5}' | grep % \ grep -v Use | sort -n | tail -1 | cut -d "%" -f1 -`
+echo ${0#*/}
 
-case $space in
-[1-6]*)
-	Message="All is quiet"
-	;;
-[7-8]*)
-	Message="Start thinking about cleaning out some stuff. There's a partition that is $space % f"
-	;;
-9[1-8])
-	Message="Better hurry with that new disk.... One partition is $space % full"
-	;;
-99)
-	Message="I'm drowning here! There's a partition at $space %!"
-	;;
-*)
-	Message="blaaaaaaaaaaaaaaaah"
-	;;
-esac
+# this script demonstrates function arguments
+echo 
 
-echo $Message | mail -s "disk report `date`" dinesh
+echo "Positional parameter 1 for the script is $1."
+echo
+
+test ()
+{
+	echo "Positional parameter 1 in the function is $1."
+	RETURN_VALUE=$?
+	echo "The exit code of this function is $RETURN_VALUE."
+}
+
+test other_param
