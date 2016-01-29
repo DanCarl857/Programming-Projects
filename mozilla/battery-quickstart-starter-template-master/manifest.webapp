@@ -1,0 +1,18 @@
+{
+	"name": "Battery",
+	"description": "Battery provides a good template for an in-app battery",
+	"launch_path": "/index.html",
+	"icons": {
+		"128": "/images/icon-128.png",
+		"512": "/images/icon-512.png"
+	},
+	"developer": {
+		"name" : "Daniel Carlson",
+		"url": "http://www.google.com"
+	},
+	"permissions":{
+		"desktop-notification": {
+			"description" : "Needed for creating system notification."
+		}
+	}
+}
