@@ -1,1 +1,0 @@
-/home/dinesh/Documents/c-projects/vector-and-matrix/array.h

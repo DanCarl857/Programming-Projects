@@ -1,7 +1,0 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(void){
-	const in bufsize = 100;
-	char buf[bufsize];
-}
